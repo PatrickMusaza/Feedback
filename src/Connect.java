@@ -53,41 +53,37 @@ public class Connect {
 
         String createFeedbackQuery, createUserQuery, createInsertAdminQuery;
 
-        createFeedbackQuery
-                = """
-        CREATE TABLE IF NOT EXISTS customer (        
-                          id INT AUTO_INCREMENT PRIMARY KEY,
-                          Gender text NOT   NULL,
-                          Email text   NOT NULL,
-                          FirstName text   NOT NULL,
-                          LastName text    NULL,
-                          Comment text    NULL,
-                          createdBy text ,
-                          createdAt timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-                        )""";
-        
-        createUserQuery
-                = """
+        createFeedbackQuery = """
+                CREATE TABLE IF NOT EXISTS Feedback (
+                                  id text NOT NULL,
+                                  FirstName text   NOT NULL,
+                                  LastName text NOT   NULL,
+                                  Email text   NOT NULL,
+                                  Gender text NOT   NULL,
+                                  Comment text  NOT  NULL,
+                                  createdBy text ,
+                                  createdAt timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                                  PRIMARY KEY (id(10))
+                                )""";
+
+        createUserQuery = """
                 CREATE TABLE IF NOT EXISTS `User` (
                           id int NOT NULL AUTO_INCREMENT,
                           user_pass TEXT NOT NULL,
                           email TEXT DEFAULT NULL,
-                          username TEXT NOT NULL,   
+                          username TEXT NOT NULL,
                           createdAt timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
                           PRIMARY KEY (id),
                           UNIQUE KEY email (email(100))
-                        )                                  
+                        )
                   """;
 
-        
-        
-        createInsertAdminQuery  
-                = """
-                  INSERT IGNORE INTO `User` (id, user_pass, email, username)
-                  SELECT 1, '0be64ae89ddd24e225434de95d501711339baeee18f009ba9b4369af27d30d60', 'musazapatrick369@gmail.com', 'Admin'
-                  FROM dual
-                  WHERE NOT EXISTS (SELECT * FROM `User` WHERE id = 1)
-                  """;
+        createInsertAdminQuery = """
+                INSERT IGNORE INTO `User` (id, user_pass, email, username)
+                SELECT 1, '0be64ae89ddd24e225434de95d501711339baeee18f009ba9b4369af27d30d60', 'admin@gmail.com', 'Admin'
+                FROM dual
+                WHERE NOT EXISTS (SELECT * FROM `User` WHERE id = 1)
+                """;
 
         try {
             Statement statement1 = con.createStatement();
@@ -141,11 +137,11 @@ public class Connect {
             openLocalServerConnection();
 
             initializeDatabase();
-            
+
             new LoginPage().setVisible(true);
 
         } catch (SQLException e) {
-            //e.printStackTrace();
+            // e.printStackTrace();
         }
     }
 }

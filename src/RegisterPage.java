@@ -1,9 +1,8 @@
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.Statement;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.showMessageDialog;
 
 public class RegisterPage extends javax.swing.JFrame {
 
@@ -230,7 +229,7 @@ public class RegisterPage extends javax.swing.JFrame {
         MasterClass master = new MasterClass();
         try {
             Connection con = Connect.getConnection();
-            Statement st = con.createStatement();
+            PreparedStatement st ;
             if ("".equals(Username.getText())) {
                 JOptionPane.showMessageDialog(this, "Username is required", "Error",
                         JOptionPane.ERROR_MESSAGE);
@@ -259,11 +258,11 @@ public class RegisterPage extends javax.swing.JFrame {
                 String hashedPassword = master.hashPassword(plainTextPassword);
 
                 if (master.isUsernameAvailable(email)) {
-                    query = "INSERT INTO `User` (username, email, user_pass)"
-                            + "VALUES( '" + user + "' , '" + email + "','" + hashedPassword + "' )";
+                    st = con.prepareStatement("INSERT INTO `User` (username, email, user_pass)"
+                            + "VALUES( '" + user + "' , '" + email + "','" + hashedPassword + "' )");
 
                     //System.out.println(hashedPassword);
-                    st.execute(query);
+                    st.executeUpdate();
                     Username.setText("");
                     Password.setText("");
                     Email.setText("");

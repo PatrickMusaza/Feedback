@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class LoginPage extends javax.swing.JFrame {
@@ -252,6 +251,9 @@ public class LoginPage extends javax.swing.JFrame {
                 }
                 if (notFound == 1 && hashedPassword.equals(passDb)) {
                     //new MasterClass().showLoader();
+                    
+                    JOptionPane.showMessageDialog(this, "Login Successfully!");
+                    
                     this.setVisible(false);
                     Feedback fd = new Feedback();
                     fd.setVisible(true);
@@ -306,7 +308,7 @@ public class LoginPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Username;
+    public static javax.swing.JTextField Username;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

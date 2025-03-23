@@ -1,6 +1,6 @@
 
 import java.awt.Color;
-import java.awt.Window;
+import java.awt.Image;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
@@ -78,10 +78,10 @@ public class MasterClass {
         loaderFrame.setSize(500, 500);
         loaderFrame.setLocationRelativeTo(null);
 
-        /* Set the application icon
-        Image logo = new ImageIcon(Login.class.getResource("/Logo.png")).getImage();
+        // Set the application icon
+        Image logo = new ImageIcon(LoginPage.class.getResource("/feedback.png")).getImage();
         loaderFrame.setIconImage(logo);
-         */
+         
     }
 
 }
