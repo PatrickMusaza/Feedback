@@ -15,7 +15,7 @@ public class Connect {
 
     public static final String dbName = "feedback";
     public static final String username = "Administrator";
-    public static final String password = "Admin";
+    public static final String password = "g@Secur!";
     public static final String createDatabaseQuery = "CREATE DATABASE IF NOT EXISTS " + dbName;
 
     private static final String WAMP_PROCESS_NAME = "mysqld";
@@ -81,10 +81,10 @@ public class Connect {
 
         
         
-        createInsertAdminQuery
+        createInsertAdminQuery  
                 = """
                   INSERT IGNORE INTO `User` (id, user_pass, email, username)
-                  SELECT 1, '335b202e18be9e2030a3d3ec6f6a355035e6ea47a0ab813230dcbe48dc18c7d0', 'musazapatrick369@gmail.com', 'Admin'
+                  SELECT 1, '0be64ae89ddd24e225434de95d501711339baeee18f009ba9b4369af27d30d60', 'musazapatrick369@gmail.com', 'Admin'
                   FROM dual
                   WHERE NOT EXISTS (SELECT * FROM `User` WHERE id = 1)
                   """;
@@ -134,13 +134,15 @@ public class Connect {
         }
     }
 
-    public void main(String[] args) throws SQLException, IOException, InterruptedException {
+    public static void main(String[] args) throws SQLException, IOException, InterruptedException {
         try {
             startWAMPP();
 
             openLocalServerConnection();
 
             initializeDatabase();
+            
+            new LoginPage().setVisible(true);
 
         } catch (SQLException e) {
             //e.printStackTrace();

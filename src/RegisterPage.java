@@ -26,12 +26,12 @@ public class RegisterPage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        Email = new javax.swing.JTextField();
+        Username = new javax.swing.JTextField();
         signUp = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         Password = new javax.swing.JPasswordField();
-        Email1 = new javax.swing.JTextField();
+        Email = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -61,11 +61,11 @@ public class RegisterPage extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 128, 8));
         jLabel3.setText("REGISTER YOUR ACCOUNT");
 
-        Email.setBackground(new java.awt.Color(204, 255, 204));
-        Email.setFont(new java.awt.Font("DejaVu Sans", 0, 12)); // NOI18N
-        Email.setToolTipText("Email");
-        Email.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        Email.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Username.setBackground(new java.awt.Color(204, 255, 204));
+        Username.setFont(new java.awt.Font("DejaVu Sans", 0, 12)); // NOI18N
+        Username.setToolTipText("Email");
+        Username.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        Username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         signUp.setBackground(new java.awt.Color(7, 164, 121));
         signUp.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
@@ -85,11 +85,11 @@ public class RegisterPage extends javax.swing.JFrame {
         Password.setBackground(new java.awt.Color(204, 255, 204));
         Password.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
 
-        Email1.setBackground(new java.awt.Color(204, 255, 204));
-        Email1.setFont(new java.awt.Font("DejaVu Sans", 0, 12)); // NOI18N
-        Email1.setToolTipText("Email");
-        Email1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        Email1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Email.setBackground(new java.awt.Color(204, 255, 204));
+        Email.setFont(new java.awt.Font("DejaVu Sans", 0, 12)); // NOI18N
+        Email.setToolTipText("Email");
+        Email.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        Email.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         jLabel7.setText("Email");
 
@@ -105,9 +105,9 @@ public class RegisterPage extends javax.swing.JFrame {
                         .addGap(68, 68, 68)
                         .addComponent(signUp, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel5)
-                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(Email1, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
@@ -123,11 +123,11 @@ public class RegisterPage extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Email1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -182,14 +182,14 @@ public class RegisterPage extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(111, 111, 111)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(signIn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -203,14 +203,14 @@ public class RegisterPage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -226,43 +226,66 @@ public class RegisterPage extends javax.swing.JFrame {
     private void signUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpActionPerformed
         // TODO add your handling code here:
 
-        String email, pass, query;
+        String email, pass, user, query;
+        MasterClass master = new MasterClass();
         try {
             Connection con = Connect.getConnection();
             Statement st = con.createStatement();
-            if ("".equals(Email.getText())) {
-                JOptionPane.showMessageDialog(new JFrame(), "Email is required", "Error",
+            if ("".equals(Username.getText())) {
+                JOptionPane.showMessageDialog(this, "Username is required", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            } else if ("".equals(Email.getText())) {
+                JOptionPane.showMessageDialog(this, "Email is required", "Error",
                         JOptionPane.ERROR_MESSAGE);
             } else if ("".equals(Password.getText())) {
-                JOptionPane.showMessageDialog(new JFrame(), "Password is required", "Error",
+                JOptionPane.showMessageDialog(this, "Password is required", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            } else if (!master.checkEmail(Email.getText())) {
+
+                JOptionPane.showMessageDialog(this, "Invalid Email.", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+
+            } else if (!master.validatePassword(Password.getText())) {
+
+                JOptionPane.showMessageDialog(this, "Password length should be between 8-12 and contain UPPER letters only ", "Error",
                         JOptionPane.ERROR_MESSAGE);
             } else {
                 email = Email.getText();
                 pass = Password.getText();
+                user = Username.getText();
 
-                MasterClass master = new MasterClass();
                 // Hash the password
                 String plainTextPassword = new String(Password.getPassword());
                 String hashedPassword = master.hashPassword(plainTextPassword);
 
                 if (master.isUsernameAvailable(email)) {
-                    query = "INSERT INTO `User` (email, user_pass)"
-                            + "VALUES( email , hashedPassword )";
+                    query = "INSERT INTO `User` (username, email, user_pass)"
+                            + "VALUES( '" + user + "' , '" + email + "','" + hashedPassword + "' )";
 
                     //System.out.println(hashedPassword);
                     st.execute(query);
-                    Email.setText("");
+                    Username.setText("");
                     Password.setText("");
+                    Email.setText("");
 
-                    showMessageDialog(null, "New account has been created successfully!");
+                    JOptionPane.showMessageDialog(this, "New account has been created successfully!");
+
+                    //new MasterClass().showLoader();
+                    this.setVisible(false);
+                    Feedback fd = new Feedback();
+                    fd.setVisible(true);
 
                 } else {
 
                     JOptionPane.showMessageDialog(this, "Error: Username already taken.");
+                    Username.setText("");
+                    Password.setText("");
+                    Email.setText("");
+                    Username.requestFocus();
                 }
             }
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(new JFrame(), ex, "Error",
+            JOptionPane.showMessageDialog(this, ex, "Error",
                     JOptionPane.ERROR_MESSAGE);
         }
 
@@ -305,8 +328,8 @@ public class RegisterPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Email;
-    private javax.swing.JTextField Email1;
     private javax.swing.JPasswordField Password;
+    private javax.swing.JTextField Username;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

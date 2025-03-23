@@ -1,6 +1,5 @@
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -8,7 +7,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.showMessageDialog;
 
 public class LoginPage extends javax.swing.JFrame {
 
@@ -215,18 +213,28 @@ public class LoginPage extends javax.swing.JFrame {
     private void signInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signInActionPerformed
         // TODO add your handling code here:
 
-        String user, Password, query, fname = null, passDb = null, role = null;
+        String user, Password, query, passDb = null;
         int notFound = 0;
+        MasterClass master = new MasterClass();
 
         try {
             Connection con = Connect.getConnection();
             Statement st = con.createStatement();
 
             if ("".equals(Username.getText())) {
-                JOptionPane.showMessageDialog(new JFrame(), "Email Address is required", "Error",
+                JOptionPane.showMessageDialog(this, "Email Address is required", "Error",
                         JOptionPane.ERROR_MESSAGE);
             } else if ("".equals(password.getText())) {
-                JOptionPane.showMessageDialog(new JFrame(), "Password is required", "Error",
+                JOptionPane.showMessageDialog(this, "Password is required", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            } else if (!master.checkEmail(Username.getText())) {
+
+                JOptionPane.showMessageDialog(this, "Invalid Email.", "Error",
+                        JOptionPane.ERROR_MESSAGE);
+
+            } else if (!master.validatePassword(password.getText())) {
+
+                JOptionPane.showMessageDialog(this, "Password length should be between 8-12 and contain UPPER letters only ", "Error",
                         JOptionPane.ERROR_MESSAGE);
             } else {
                 user = Username.getText();
@@ -240,23 +248,20 @@ public class LoginPage extends javax.swing.JFrame {
                 ResultSet rss = st.executeQuery(query);
                 while (rss.next()) {
                     passDb = rss.getString("user_pass");
-                    fname = rss.getString("full_name");
-                    role = rss.getString("user_role");
                     notFound = 1;
                 }
-                if (notFound == 1 && hashedPassword.equals(passDb) && role.equals("Admin")) {
-
-                    new MasterClass().showLoader();
+                if (notFound == 1 && hashedPassword.equals(passDb)) {
+                    //new MasterClass().showLoader();
+                    this.setVisible(false);
                     Feedback fd = new Feedback();
                     fd.setVisible(true);
                 } else {
-                    JOptionPane.showMessageDialog(new JFrame(), "Incorrect Username or Password", "Error",
+                    JOptionPane.showMessageDialog(this, "Incorrect Username or Password", "Error",
                             JOptionPane.ERROR_MESSAGE);
                     Username.setText("");
                     password.setText("");
                     Username.requestFocus();
-                }   
-                new MasterClass().closeLoader();
+                }
 
             }
         } catch (SQLException ex) {

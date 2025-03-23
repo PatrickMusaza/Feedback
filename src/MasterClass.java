@@ -1,6 +1,5 @@
 
 import java.awt.Color;
-import java.awt.Image;
 import java.awt.Window;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -83,15 +82,6 @@ public class MasterClass {
         Image logo = new ImageIcon(Login.class.getResource("/Logo.png")).getImage();
         loaderFrame.setIconImage(logo);
          */
-    }
-
-    public static void closeLoader() {
-        Window[] windows = Window.getWindows();
-        for (Window window : windows) {
-            if (window.isVisible()) {
-                window.dispose();
-            }
-        }
     }
 
 }
