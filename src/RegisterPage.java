@@ -1,7 +1,9 @@
 
+import java.awt.Image;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class RegisterPage extends javax.swing.JFrame {
@@ -11,6 +13,8 @@ public class RegisterPage extends javax.swing.JFrame {
      */
     public RegisterPage() {
         initComponents();
+        Image logo = new ImageIcon(this.getClass().getResource("/feedback.png")).getImage();
+        this.setIconImage(logo);
     }
 
     /**
